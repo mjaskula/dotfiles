@@ -1,1 +1,1 @@
-pip install -r requirements.txt
+sudo pip install --upgrade -r ${ZSH}/python/requirements.txt
