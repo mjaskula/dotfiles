@@ -2,6 +2,9 @@
 
 # ~/.osx — http://mths.be/osx
 
+# set -e
+set -x
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -22,6 +25,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
 defaults write "${domain}" dontAutoLoad -array \
 "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+"/System/Library/CoreServices/Menu Extras/User.menu"
 done
 defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
@@ -64,7 +68,7 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+# /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
@@ -367,9 +371,6 @@ defaults write com.apple.dock hide-mirror -bool true
 # Reset Launchpad, but keep the desktop wallpaper intact
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
-# Add iOS Simulator to Launchpad
-# sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
-
 # Add a spacer to the left side of the Dock (where the applications are)
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 # Add a spacer to the right side of the Dock (where the Trash is)
@@ -456,7 +457,8 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
 
 # Disable inline attachments (just show the icons)
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+# defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool false
 
 # Disable automatic spell checking
 # defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
@@ -618,9 +620,10 @@ cp -r ${ZSH}/sublime/User/* ~/Library/Application\ Support/Sublime\ Text*/Packag
 # Kill affected applications                                                  #
 ###############################################################################
 
+# not killing "Terminal" because it's annoying
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 "Dock" "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
-"Terminal" "iCal"; do
+"iCal"; do
 killall "${app}" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
