@@ -1,1 +1,1 @@
-easy_install SpoofMAC
+pip install -r requirements.txt
