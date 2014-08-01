@@ -1,5 +1,7 @@
 #compdef boom
 
+# see: https://github.com/holman/boom
+
 local state line cmds ret=1
 
 _arguments -C '1: :->cmds' '*: :->args'
