@@ -26,6 +26,7 @@ install homebrew/dupes/screen
 install ant
 install git
 install gradle
+install grc
 install gti
 install imagemagick --with-webp
 install maven
