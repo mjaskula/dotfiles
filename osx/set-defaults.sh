@@ -496,7 +496,7 @@ killall mds > /dev/null 2>&1
 # Make sure indexing is enabled for the main volume
 sudo mdutil -i on / > /dev/null
 # Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
+# sudo mdutil -E / > /dev/null
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -622,7 +622,7 @@ cp -r ${ZSH}/sublime/User/* ~/Library/Application\ Support/Sublime\ Text*/Packag
 
 # not killing "Terminal" because it's annoying
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-"Dock" "Finder" "Mail" "Messages" "Safari" "SizeUp" "SystemUIServer" \
+"Dock" "Finder" "Messages" "SizeUp" "SystemUIServer" \
 "iCal"; do
 killall "${app}" > /dev/null 2>&1
 done
