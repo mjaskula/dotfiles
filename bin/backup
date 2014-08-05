@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/local/bin/rsync -aNHAXx --protect-args --fileflags --force-change --progress --rsync-path="/opt/local/bin/rsync" $@
