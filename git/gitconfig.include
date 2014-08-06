@@ -1,0 +1,47 @@
+# real git config needs to include this file like this:
+#  [include]
+#    path = .dotfiles.real/git/gitconfig.include
+#
+
+[hub]
+        protocol = https
+
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+
+[help]
+        autocorrect = 1
+
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+        ui = true
+
+[branch]
+        autosetuprebase = always
+
+[core]
+    autocrlf = false                        # If you're working with windows users or on github, you want this setting
+    ignorecase = false
+
+[alias]
+    co = checkout
+    st = status -sb                         # you check status a lot, the flags are for compact output
+    stat = status
+    br = branch
+    lol = log --oneline --decorate --graph  # Log One Line, display is similar to gui clients and good for getting an overview
+    who = shortlog -s --                    # mostly for github, lists how many commits each committer has made
+    oneline = log --pretty=format:'%C(yellow)%h %Cred%ad%x09%Cblue%an%x09%Cgreen%d %Creset%s' --date=relative -n10
+    promote = !$ZSH/bin/git-promote
+    wtf     = !$ZSH/bin/git-wtf
+    rank-contributors = !$ZSH/bin/git-rank-contributors
+    count   = !git shortlog -sn
+
+[push]
+        default = current
+
+[credential]
+        helper = osxkeychain
