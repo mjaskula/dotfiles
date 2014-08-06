@@ -38,7 +38,7 @@ install the_silver_searcher
 install tig
 install tmux
 install watch
-install zsh
+install zsh # make it available: sudo vim /etc/shells
 #install zsh-syntax-highlighting
 
 
