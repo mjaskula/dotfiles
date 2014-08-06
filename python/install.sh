@@ -1,1 +1,1 @@
-sudo pip install --upgrade -r ${ZSH}/python/requirements.txt
+sudo pip install --upgrade -r ${DOTFILES}/python/requirements.txt
