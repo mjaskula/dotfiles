@@ -1,1 +1,1 @@
-export PATH=`$(brew --prefix coreutils)/libexec/gnubin`:$PATH
+export PATH=`echo $(brew --prefix coreutils)/libexec/gnubin`:$PATH
