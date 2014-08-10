@@ -9,5 +9,7 @@ then
   alias la='gls -A --color'
 fi
 
+#alias ls='ls -G'
 alias pwdc="echo `pwd` | pbcopy"
+alias gpull='git stash save -u && git pull && git stash pop'
 
