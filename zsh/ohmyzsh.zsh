@@ -43,3 +43,5 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git gradle maven brew pip zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+unset RPROMPT #kill the right prompt, it's annoying for copy from terminal
