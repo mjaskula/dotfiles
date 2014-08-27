@@ -9,3 +9,4 @@ cask install google-chrome 2> /dev/null
 cask install iterm2 2> /dev/null
 cask install Postgres 2> /dev/null
 cask install sublime-text 2> /dev/null
+#cask install adium 2> /dev/null
