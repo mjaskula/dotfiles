@@ -1,0 +1,1 @@
+alias kill_dock='killall -KILL Dock'
