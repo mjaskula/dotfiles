@@ -10,6 +10,7 @@ export CLICOLOR=true
 fpath=($DOTFILES/functions $fpath)
 
 autoload -U $DOTFILES/functions/*(:t)
+autoload -U zmv
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
