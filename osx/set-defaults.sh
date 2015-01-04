@@ -33,11 +33,14 @@ defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/Battery.menu" \
 "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-# Set highlight color to blue
-defaults write NSGlobalDomain AppleHighlightColor -string "0.709800 0.835300 1.000000"
+# Set highlight color to grey
+defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
 
-# Set sidebar icon size to medium
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+# Set dark mode
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
+# Set sidebar icon size to small
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -160,7 +163,7 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
 # Disable press-and-hold for keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
@@ -222,7 +225,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Docu
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
