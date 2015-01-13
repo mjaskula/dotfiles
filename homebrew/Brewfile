@@ -40,7 +40,7 @@ install tmux
 install watch
 install zsh # make it available: sudo vim /etc/shells
 #install zsh-syntax-highlighting
-
+install git-extras
 
 # Remove outdated versions from the cellar
 cleanup
