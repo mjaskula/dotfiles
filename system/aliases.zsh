@@ -10,6 +10,6 @@ then
 fi
 
 #alias ls='ls -G'
-alias pwdc="echo `pwd` | pbcopy"
+alias pwdc='echo `pwd` | pbcopy'
 alias gpull='git stash save -u && git pull && git stash pop'
 alias mkdir="mkdir -p"
