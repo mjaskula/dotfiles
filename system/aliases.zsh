@@ -13,3 +13,9 @@ fi
 alias pwdc='echo `pwd` | pbcopy'
 alias gpull='git stash save -u && git pull && git stash pop'
 alias mkdir="mkdir -p"
+
+
+# misc
+
+alias purge_queues='rabbitmqadmin -f tsv -q list queues name | while read queue; do rabbitmqadmin purge queue name=${queue}; done'
+alias serve='python -m SimpleHTTPServer'
