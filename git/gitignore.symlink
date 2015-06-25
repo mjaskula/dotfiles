@@ -2,3 +2,5 @@
 *~
 *.swp
 .gradletasknamecache
+.project
+.pydevproject
