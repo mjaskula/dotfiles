@@ -1,0 +1,6 @@
+npm installs:
+
+  npm install -g mongo-hacker
+
+
+Convert provisioning to ansible
