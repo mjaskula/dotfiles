@@ -31,11 +31,11 @@
 	"match_brackets_angle": true,
 	"rulers":
 	[
-		80
+		99
 	],
 	"show_encoding": true,
 	"show_line_endings": true,
-	"tab_size": 2,
+	"tab_size": 4,
 	"translate_tabs_to_spaces": true,
-	"word_wrap": true
+	"word_wrap": false
 }
