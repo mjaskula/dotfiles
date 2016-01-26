@@ -1,0 +1,14 @@
+[local]
+127.0.0.127
+
+
+[work:children]
+local
+
+
+[home:children]
+local
+
+
+[all:vars]
+ansible_connection=local
