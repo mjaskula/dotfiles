@@ -1,10 +1,7 @@
 #!/bin/sh
-set -e
 
-if [[ ! -x /usr/bin/gcc ]]; then
-    echo "  Installing command line developer tools"
-    xcode-select --install
-fi
+xcode-select --install
+set -e
 
 echo "  fixing ownership of /usr/local"
 sudo chown -R $(whoami):admin /usr/local
