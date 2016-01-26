@@ -17,3 +17,9 @@ if test ! $(which ansible); then
   echo "  Installing ansible"
   brew install ansible
 fi
+
+
+if [[ ! -x ~/.dotfiles ]]; then
+  echo "  cloning dotfiles"
+  git clone https://github.com/mjaskula/dotfiles.git .dotfiles
+fi
