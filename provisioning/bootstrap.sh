@@ -1,18 +1,22 @@
 #!/bin/sh
-
-#Install the command line developer tools
-xcode-select --install
-
 set -e
 
-# Install Homebrew
-if test ! $(which brew)
-then
-  echo "  Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew-install.log
-else
-  echo "  Updating Homebrew"
-  brew update
+if [[ ! -x /usr/bin/gcc ]]; then
+    echo "  Installing command line developer tools"
+    xcode-select --install
 fi
 
-brew install ansible
+echo "  fixing ownership of /usr/local"
+sudo chown -R $(whoami):admin /usr/local
+
+if test ! $(which brew); then
+  echo "  Installing Homebrew"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+#TODO: update the PATH? export PATH=/usr/local/bin:$PATH
+
+if test ! $(which ansible); then
+  echo "  Installing ansible"
+  brew install ansible
+fi
