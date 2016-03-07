@@ -1,0 +1,12 @@
+---
+
+- name: Provision a new machine
+  hosts: all
+
+  pre_tasks:
+    - name: install roles from ansible-galaxy
+      local_action: command ansible-galaxy install -r requirements.yml
+
+
+  roles:
+    - common

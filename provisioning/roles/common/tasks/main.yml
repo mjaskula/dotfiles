@@ -1,0 +1,6 @@
+---
+
+- name: crap
+  shell: echo crap
+
+
