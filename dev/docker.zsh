@@ -1,1 +1,1 @@
-eval "$(docker-machine env default)"
+alias docker-init='eval "$(docker-machine env default)"'

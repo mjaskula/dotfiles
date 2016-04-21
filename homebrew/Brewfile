@@ -35,4 +35,5 @@ brew 'watch'
 brew 'zsh' # make it available: sudo vim /etc/shells
 #brew 'zsh-syntax-highlighting'
 brew 'git-extras'
-
+brew 'htop'
+brew 'colordiff'
