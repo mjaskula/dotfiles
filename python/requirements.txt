@@ -1,3 +1,4 @@
+setuptools
 pip
 iPython
 virtualenv

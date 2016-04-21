@@ -24,7 +24,7 @@ brew 'grc'
 brew 'gti'
 #brew 'imagemagick' --with-webp
 brew 'maven'
-brew 'python'
+#brew 'python'
 brew 'rlwrap'
 brew 'scala'
 brew 'ssh-copy-id'

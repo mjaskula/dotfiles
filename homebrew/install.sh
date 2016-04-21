@@ -19,8 +19,12 @@ brew tap Homebrew/bundle
 # Install homebrew packages
 brew bundle -v --file=$DOTFILES/homebrew/Brewfile
 
+# python 2.7.6
+brew install https://raw.githubusercontent.com/Homebrew/homebrew/cff239addef86cc2bdeac6d97bd57992540f2ace/Library/Formula/python.rb
+
 brew bundle -v --file=$DOTFILES/homebrew/Caskfile
 
-brew cleanup
+
+# brew cleanup cleanup prevents `brew switch`
 
 exit 0
