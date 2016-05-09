@@ -1,1 +1,1 @@
-curl http://www.gitignore.io/api/$1
+curl https://www.gitignore.io/api/$1
