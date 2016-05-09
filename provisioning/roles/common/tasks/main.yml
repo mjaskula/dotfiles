@@ -39,7 +39,14 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - gti
+    - coreutils
+    - moreutils
+    - findutils
+    - homebrew/dupes/grep
+    - grc
+    - the_silver_searcher
+    - zsh
+    - watch
   tags:
     - homebrew
 

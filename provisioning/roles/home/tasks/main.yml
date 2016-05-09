@@ -1,12 +1,12 @@
 ---
 
-- name: install home homebrew packages
-  homebrew:
-    upgrade_all: no
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - cowsay
-  tags:
-    - homebrew
+# - name: install home homebrew packages
+#   homebrew:
+#     upgrade_all: no
+#     name: "{{ item }}"
+#     state: present
+#   with_items:
+#     - 
+#   tags:
+#     - homebrew
 

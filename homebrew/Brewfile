@@ -3,37 +3,32 @@
 
 # Install GNU core utilities (those that come with OS X are outdated)
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-brew 'coreutils'
+brew 'coreutils' # ansible
 # Install some other useful utilities like `sponge`
-brew 'moreutils'
+brew 'moreutils' # ansible
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
-brew 'findutils'
-# Install GNU `sed`, overwriting the built-in `sed`
-#brew 'gnu-sed' --default-names
+brew 'findutils' # ansible
 
 # Install more recent versions of some OS X tools
-# brew 'vim' --override-system-vi
 brew 'homebrew/dupes/grep'
-brew 'homebrew/dupes/screen'
 
 # Install other useful binaries
 brew 'ant'
-brew 'git'
+brew 'git'  # ansible
 brew 'gradle'
-brew 'grc'
-brew 'gti'
-#brew 'imagemagick' --with-webp
+brew 'grc'  # ansible
+brew 'gti'  # ansible
 brew 'maven'
 #brew 'python'
-brew 'rlwrap'
+brew 'rlwrap'  # ansible
 brew 'scala'
-brew 'ssh-copy-id'
-brew 'the_silver_searcher'
-brew 'tig'
+brew 'ssh-copy-id'  # ansible
+brew 'the_silver_searcher'  # ansible
+brew 'tig'  # ansible
 brew 'tmux'
-brew 'watch'
-brew 'zsh' # make it available: sudo vim /etc/shells
+brew 'watch' # ansible
+brew 'zsh' # make it available: sudo vim /etc/shells  # ansible
 #brew 'zsh-syntax-highlighting'
-brew 'git-extras'
+brew 'git-extras'  # ansible
 brew 'htop'
 brew 'colordiff'

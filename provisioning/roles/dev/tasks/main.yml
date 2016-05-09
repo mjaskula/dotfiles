@@ -1,0 +1,17 @@
+---
+
+- name: install home homebrew packages
+  homebrew:
+    upgrade_all: no
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - git
+    - tig
+    - git-extras
+    - gti
+    - rlwrap
+    - ssh-copy-id
+  tags:
+    - homebrew
+

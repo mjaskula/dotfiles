@@ -18,8 +18,4 @@ if test ! $(which ansible); then
   brew install ansible
 fi
 
-
-if [[ ! -x ~/.dotfiles ]]; then
-  echo "  cloning dotfiles"
-  git clone https://github.com/mjaskula/dotfiles.git .dotfiles
-fi
+ansible-pull --full -d .dotfiles -U https://github.com/mjaskula/dotfiles.git provisioning/provision.yml
