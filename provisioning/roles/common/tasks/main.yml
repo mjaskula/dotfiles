@@ -33,7 +33,7 @@
   tags:
     - homebrew
 
-- name: install common homebrew packages
+- name: install homebrew packages
   homebrew:
     upgrade_all: no
     name: "{{ item }}"

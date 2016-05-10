@@ -18,4 +18,4 @@ if test ! $(which ansible); then
   brew install ansible
 fi
 
-ansible-pull --full -d .dotfiles -U https://github.com/mjaskula/dotfiles.git provisioning/provision.yml
+ansible-pull --full -d .dotfiles -U https://github.com/mjaskula/dotfiles.git -i ~/.dotfiles/provisioning/inventory ~/.dotfiles/provisioning/provision.yml

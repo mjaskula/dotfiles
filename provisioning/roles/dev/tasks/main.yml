@@ -1,6 +1,6 @@
 ---
 
-- name: install home homebrew packages
+- name: install homebrew packages
   homebrew:
     upgrade_all: no
     name: "{{ item }}"
