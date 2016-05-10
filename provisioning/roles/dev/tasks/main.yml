@@ -23,3 +23,6 @@
   with_items:
     - postgres
     - dockertoolbox
+    - datagrip
+  tags:
+    - homebrew

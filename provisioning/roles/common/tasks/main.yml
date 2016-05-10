@@ -1,44 +1,6 @@
 ---
 
-- name: check for xcode
-  command: xcode-select --version
-  register: xcode
-  ignore_errors: true
-  tags:
-    - homebrew
-
-- name: xcode failure
-  fail:
-    msg: "XCode is not correctly installed, halting Homebrew installation. Retry after manually installing Xcode & Xcode Command Line Tools."
-  when: xcode.rc != 0
-  tags:
-    - homebrew
-
-- name: check for homebrew
-  stat: path=/usr/local/bin/brew
-  register: brew
-  tags:
-    - homebrew
-
-- name: install homebrew
-  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  when: not brew.stat.exists
-  tags:
-    - homebrew
-
-- name: update homebrew
-  homebrew:
-    update_homebrew: yes
-    upgrade_all: no
-  tags:
-    - homebrew
-
-# - name: install homebrew taps
-#   homebrew_tap:
-#     name: "{{ item }}"
-#     state: present
-#   with_items:
-#     - caskroom/cask/brew-cask
+- include: homebrew_install.yml
 
 - name: install homebrew packages
   homebrew:
@@ -65,3 +27,6 @@
   with_items:
     - google-chrome
     - sublime-text
+    - slack
+  tags:
+    - homebrew
