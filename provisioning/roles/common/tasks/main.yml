@@ -54,6 +54,7 @@
     - the_silver_searcher
     - zsh
     - watch
+    - htop
   tags:
     - homebrew
 
