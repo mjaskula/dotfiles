@@ -3,19 +3,22 @@
 xcode-select --install
 set -e
 
-echo "  fixing ownership of /usr/local"
-sudo chown -R $(whoami):admin /usr/local
+sudo easy_install pip
+sudo pip install ansible
 
-if test ! $(which brew); then
-  echo "  Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+# echo "  fixing ownership of /usr/local"
+# sudo chown -R $(whoami):admin /usr/local
 
-#TODO: update the PATH? export PATH=/usr/local/bin:$PATH
+# if test ! $(which brew); then
+#   echo "  Installing Homebrew"
+#   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# fi
 
-if test ! $(which ansible); then
-  echo "  Installing ansible"
-  brew install ansible
-fi
+# #TODO: update the PATH? export PATH=/usr/local/bin:$PATH
 
-ansible-pull --full -d .dotfiles -U https://github.com/mjaskula/dotfiles.git provisioning/provision.yml
+# if test ! $(which ansible); then
+#   echo "  Installing ansible"
+#   brew install ansible
+# fi
+
+# ansible-pull --full -d .dotfiles -U https://github.com/mjaskula/dotfiles.git provisioning/provision.yml
