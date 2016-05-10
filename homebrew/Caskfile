@@ -3,8 +3,7 @@
 tap 'caskroom/cask'
 
 
-cask 'google-chrome'
-cask 'iterm2'
-cask 'Postgres'
-cask 'sublime-text'
-cask 'dockertoolbox'
+cask 'google-chrome' # ansible
+cask 'Postgres' # ansible
+cask 'sublime-text' # ansible
+cask 'dockertoolbox' # ansible

@@ -11,4 +11,4 @@
   roles:
     # eventually we'll want to be able to choose home/work
     # probably based on hostname
-    - home 
+    - dev 

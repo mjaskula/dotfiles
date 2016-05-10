@@ -33,6 +33,13 @@
   tags:
     - homebrew
 
+# - name: install homebrew taps
+#   homebrew_tap:
+#     name: "{{ item }}"
+#     state: present
+#   with_items:
+#     - caskroom/cask/brew-cask
+
 - name: install homebrew packages
   homebrew:
     upgrade_all: no
@@ -42,7 +49,7 @@
     - coreutils
     - moreutils
     - findutils
-    - homebrew/dupes/grep
+    # - homebrew/dupes/grep
     - grc
     - the_silver_searcher
     - zsh
@@ -50,3 +57,10 @@
   tags:
     - homebrew
 
+- name: install homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - google-chrome
+    - sublime-text

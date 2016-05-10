@@ -6,11 +6,11 @@ Goals:
 
 
 Steps to provision new machine:
-- remote execute shell script grom git that will
+- remote execute shell script from git that will
   - install xcode
-  - install homebrew
-  - homebrew install ansible
+  - install ansible
   - ansible-pull .dotfiles
+    - install homebrew
     - installs other homebrew/casks
     - installs ruby gems
     - installs node shit
