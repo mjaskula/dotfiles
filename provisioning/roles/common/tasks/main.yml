@@ -1,7 +1,5 @@
 ---
 
-- include: homebrew_install.yml
-
 - name: install homebrew packages
   homebrew:
     upgrade_all: no
