@@ -1,9 +1,0 @@
-# Install native apps
-# Usage: `brew bundle --file=Caskfile`
-tap 'caskroom/cask'
-
-
-cask 'google-chrome' # ansible
-cask 'Postgres' # ansible
-cask 'sublime-text' # ansible
-cask 'dockertoolbox' # ansible
