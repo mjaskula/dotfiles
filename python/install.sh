@@ -1,1 +1,0 @@
-sudo pip install --upgrade -r ${DOTFILES}/python/requirements.txt

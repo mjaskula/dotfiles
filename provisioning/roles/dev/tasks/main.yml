@@ -13,7 +13,6 @@
     - rlwrap
     - ssh-copy-id
     - colordiff
-    - https://raw.githubusercontent.com/Homebrew/homebrew/cff239addef86cc2bdeac6d97bd57992540f2ace/Library/Formula/python.rb
   tags:
     - homebrew
 

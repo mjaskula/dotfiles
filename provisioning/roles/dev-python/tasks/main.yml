@@ -1,0 +1,25 @@
+---
+
+- name: install homebrew packages
+  homebrew:
+    upgrade_all: no
+    name: "{{ item }}"
+    state: present
+  with_items: []
+    # looks like this no longer works with the current version of brew. Need a new way to get 2.7.10
+    # - "https://raw.githubusercontent.com/Homebrew/homebrew/cff239addef86cc2bdeac6d97bd57992540f2ace/Library/Formula/python.rb"
+  tags:
+    - homebrew
+
+- name: install system level python packages
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - setuptools
+    - pip
+    - virtualenv
+    - virtualenvwrapper
+    - ipython
+  environment:
+    PIP_REQUIRE_VIRTUALENV: ""
