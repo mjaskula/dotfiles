@@ -1,0 +1,7 @@
+---
+
+osx_config:
+  
+  system:
+    # Disable the sound effects on boot
+    - nvram SystemAudioVolume=" "

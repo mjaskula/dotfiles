@@ -1,0 +1,10 @@
+---
+
+- name: OSX Sys Config | System
+  shell: "{{ item }}"
+  with_items: 
+   - "{{ osx_config.system }}"
+  become: yes
+  become_method: sudo
+  tags:
+    - osx
