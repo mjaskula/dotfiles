@@ -28,3 +28,28 @@
     - slack
   tags:
     - homebrew
+
+- name: Determine if zsh is default/current shell
+  shell: echo $SHELL
+  register: current_shell
+  tags:
+    - zsh
+
+- name: Enable zsh in /etc/shells
+  shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
+  when: current_shell.stdout != "{{zsh_path}}"
+  tags:
+    - zsh
+
+- name: Set zsh as default shell
+  shell: chsh -s {{ zsh_path }}
+  when: current_shell.stdout != "{{zsh_path}}"
+  tags:
+    - zsh
+
+- name: Clone/Update oh-my-zsh repo
+  git: 
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: "{{ ansible_env.HOME}}/.oh-my-zsh"
+  tags:
+    - zsh
