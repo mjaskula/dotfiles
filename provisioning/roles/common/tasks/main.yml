@@ -29,6 +29,24 @@
   tags:
     - homebrew
 
+- name: "select dotfiles: ~/.dotfiles/<topic>/<file>.symlink"
+  find:
+    path: "{{ ansible_env.HOME}}/.dotfiles/"
+    recurse: yes
+    pattern: "*.symlink"
+  register: files_to_symlink
+  tags:
+    - dotfiles
+
+- name: "symlink: ~/.<file> -> ~/.dotfiles/<topic>/<file>.symlink"
+  file:
+    src: "{{ item.path }}"
+    dest: "{{ ansible_env.HOME}}/.{{ item.path|basename|replace('.symlink', '') }}"
+    state: link
+  with_items: "{{files_to_symlink.files}}"
+  tags:
+    - dotfiles
+
 - name: Determine if zsh is default/current shell
   shell: echo $SHELL
   register: current_shell
