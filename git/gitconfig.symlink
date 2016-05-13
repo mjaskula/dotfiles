@@ -1,7 +1,6 @@
-# real git config needs to include this file like this:
-#  [include]
-#    path = .dotfiles/git/gitconfig.include
-#
+[include]
+    path = ~/.gitconfig.local
+
 
 [hub]
         protocol = https
@@ -39,6 +38,9 @@
     rank-contributors = !$DOTFILES/bin/git-rank-contributors
     count   = !git shortlog -sn
     udiff = diff @{u}...HEAD
+
+[apply]
+    whitespace = nowarn
 
 [push]
         default = current
