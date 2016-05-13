@@ -51,11 +51,6 @@ defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
-# Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-# Set a fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
@@ -64,15 +59,6 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 # defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
 # defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 # defaults write NSGlobalDomain AppleMetricUnits -bool true
-
-# Set the timezone; see `systemsetup -listtimezones` for other values
-systemsetup -settimezone "America/New_York" > /dev/null
-
-# Disable auto-correct
-# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-# Stop iTunes from responding to the keyboard media keys
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Screen                                                                      #

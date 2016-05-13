@@ -4,9 +4,26 @@ osx_config:
   
   system:
     # Disable the sound effects on boot
-    # - nvram SystemAudioVolume=" "
+    - nvram SystemAudioVolume=" "
+
 
     # Reveal IP address, hostname, OS version, etc. when clicking the clock
     # in the login window
-    #- sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+    - sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
+    # set timezone
+    - systemsetup -settimezone "America/New_York" > /dev/null
+    - systemsetup -setusingnetworktime on > /dev/null
+    - systemsetup -setcomputersleep Never > /dev/null
+    - systemsetup -setdisplaysleep 10 > /dev/null
+    - systemsetup -setharddisksleep 10 > /dev/null
+    - systemsetup -setwakeonnetworkaccess on > /dev/null
+    - systemsetup -setremotelogin on > /dev/null
+
+    # these can be moved to main.yml when this is released: 
+    #  https://github.com/ansible/ansible-modules-extras/issues/1742
+
+    - defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
+    - defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+    - defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+ 
