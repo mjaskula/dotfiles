@@ -54,8 +54,10 @@
     - zsh
 
 - name: Enable zsh in /etc/shells
-  shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
+  become: yes
+  become_method: sudo
   when: current_shell.stdout != "{{zsh_path}}"
+  shell: /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
   tags:
     - zsh
 
