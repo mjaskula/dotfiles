@@ -10,16 +10,22 @@
     # - "https://raw.githubusercontent.com/Homebrew/homebrew/cff239addef86cc2bdeac6d97bd57992540f2ace/Library/Formula/python.rb"
   tags:
     - homebrew
+    - python
 
 - name: install system level python packages
   pip:
     name: "{{ item }}"
-    state: present
+    state: latest
   with_items:
     - setuptools
     - pip
+    - stevedore
     - virtualenv
     - virtualenvwrapper
     - ipython
+  become: yes
+  become_method: sudo
   environment:
     PIP_REQUIRE_VIRTUALENV: ""
+  tags:
+    - python
