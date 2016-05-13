@@ -5,4 +5,9 @@ syspip() {
 }
 
 export WORKON_HOME=$HOME/.virtualenvs
-source "$(which virtualenvwrapper.sh)"
+
+VENVWRAPPER="$(which virtualenvwrapper.sh)"
+if [[ -e $VENVWRAPPER ]]
+then
+  source $VENVWRAPPER
+fi
