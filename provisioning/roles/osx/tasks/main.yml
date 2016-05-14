@@ -73,6 +73,57 @@
 - name: Set a fast keyboard repeat rate
   osx_defaults: domain=NSGlobalDomain key=KeyRepeat type=int value=2
 
+- name: Set a fast delay until repeat
+  osx_defaults: domain=NSGlobalDomain key=InitialKeyRepeat type=int value=15
+
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+
+- name: Require password after sleep or screen saver
+  osx_defaults: domain=com.apple.screensaver key=askForPassword type=int value=1
+
+- name: Require password immediately after sleep or screen saver begins
+  osx_defaults: domain=com.apple.screensaver key=askForPasswordDelay type=int value=0
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+- name: Finder: allow quitting via ⌘Q
+  osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
+
+- name: Finder: disable window animations and Get Info animations
+  osx_defaults: domain=com.apple.finder key=DisableAllAnimations type=bool value=true
+
+# - name: Set Documents as the default location for new Finder windows
+# osx_defaults: domain=com.apple.finder key=NewWindowTarget type=string  value="PfLo"
+# osx_defaults: domain=com.apple.finder key=NewWindowTargetPath type=string  value="file://${HOME}/Documents/"
+
+- name: Finder: show all filename extensions
+  osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
+
+- name: Finder: show status bar
+  osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
+
+- name: Finder: show path bar
+  osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
+
+- name: Finder: allow text selection in Quick Look
+  osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=true
+
+- name: Display full POSIX path as Finder window title
+  osx_defaults: domain=com.apple.finder key=_FXShowPosixPathInTitle type=bool value=true
+
+- name: Avoid creating .DS_Store files on network volumes
+  osx_defaults: domain=com.apple.desktopservices key=DSDontWriteNetworkStores type=bool value=true
+
+# - name: Use list view in all Finder windows by default
+#   osx_defaults: domain=com.apple.finder key=FXPreferredViewStyle type=string value="Nlsv"
+
+- name: Disable the warning before emptying the Trash
+  osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
+
 
 - name: Restart things so that changes take effect
   shell: "{{ item }}"
