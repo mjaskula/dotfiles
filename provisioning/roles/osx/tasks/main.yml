@@ -84,13 +84,13 @@
   osx_defaults: domain=com.apple.screensaver key=askForPassword type=int value=1
 
 - name: Require password immediately after sleep or screen saver begins
-  osx_defaults: domain=com.apple.screensaver key=askForPasswordDelay type=int value=0
+  osx_defaults: domain=com.apple.screensaver key=askForPasswordDelay type=float value=0
 
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
-- name: Finder: allow quitting via ⌘Q
+- name: Finder- allow quitting via ⌘Q
   osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
 
 - name: Finder: disable window animations and Get Info animations
