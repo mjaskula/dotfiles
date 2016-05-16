@@ -23,13 +23,17 @@ osx_config:
     # Show the ~/Library folder
     - chflags nohidden ~/Library
 
-
     # these can be moved to main.yml when this is released: 
     #  https://github.com/ansible/ansible-modules-extras/issues/1742
 
     - defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
-    - defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
     - defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+    
+    - defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+    
+    - defaults write com.apple.terminal 'Default Window Settings' -string "Pro";
+    - defaults write com.apple.terminal 'Startup Window Settings' -string "Pro";
+
     - defaults write com.apple.finder NewWindowTarget -string "PfLo"
     - defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Documents/"
     - defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"

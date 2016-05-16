@@ -129,42 +129,11 @@
 # Terminal & iTerm 2                                                          #
 ###############################################################################
 
-- name: Get current terminal profile
-  shell: defaults read com.apple.terminal 'Default Window Settings'
-  register: current_terminal_profile
-  tags:
-    - terminal
-
-- name: Use a modified version of the Solarized Dark theme by default in Terminal.app
-  when: current_terminal_profile.stdout != {{terminal_profile}
-  shell: open {{HOME}}/.dotfiles/terminal/{{terminal_profile}}.terminal
-  tags:
-    - terminal
-
-- name: Wait a bit to make sure the theme is loaded
-  pause: seconds=1
-  tags:
-    - terminal
-
 # - name: Set terminal default window
-#   osx_defaults: domain=com.apple.terminal key='Default Window Settings' type=string value={{terminal_profile}}
-#   tags:
-#     - terminal
+#   osx_defaults: domain=com.apple.terminal key='Default Window Settings' type=string value=Pro
 
 # - name: Set terminal startup window
-#   osx_defaults: domain=com.apple.terminal key='Startup Window Settings' type=string value={{terminal_profile}}
-#   tags:
-#     - terminal
-
-- name: Set terminal default window
-  shell: defaults write com.apple.terminal 'Default Window Settings' -string "{{terminal_profile}}";
-  tags:
-    - terminal
-    
-- name: Set terminal startup window
-  shell: defaults write com.apple.terminal 'Startup Window Settings' -string "{{terminal_profile}}";
-  tags:
-    - terminal
+#   osx_defaults: domain=com.apple.terminal key='Startup Window Settings' type=string value=Pro
 
 
 
