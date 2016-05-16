@@ -93,23 +93,23 @@
 - name: Finder- allow quitting via ⌘Q
   osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
 
-- name: Finder: disable window animations and Get Info animations
+- name: Finder- disable window animations and Get Info animations
   osx_defaults: domain=com.apple.finder key=DisableAllAnimations type=bool value=true
 
 # - name: Set Documents as the default location for new Finder windows
 # osx_defaults: domain=com.apple.finder key=NewWindowTarget type=string  value="PfLo"
 # osx_defaults: domain=com.apple.finder key=NewWindowTargetPath type=string  value="file://${HOME}/Documents/"
 
-- name: Finder: show all filename extensions
+- name: Finder- show all filename extensions
   osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
 
-- name: Finder: show status bar
+- name: Finder- show status bar
   osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
 
-- name: Finder: show path bar
+- name: Finder- show path bar
   osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
 
-- name: Finder: allow text selection in Quick Look
+- name: Finder- allow text selection in Quick Look
   osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=true
 
 - name: Display full POSIX path as Finder window title
