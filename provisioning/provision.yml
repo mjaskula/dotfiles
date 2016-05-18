@@ -16,4 +16,4 @@
     #- dev-python
     #- dev-data
     #- dev-java
-    #- osx
+    - {role: osx, tags: osx}
