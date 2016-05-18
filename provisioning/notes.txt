@@ -2,36 +2,31 @@ Provisioning:
 
 Goals:
 - limit shell script as much as possible (do everything with ansible)
-- remove all provisioning from the dot files scripts
-
-
-Steps to provision new machine:
-- remote execute shell script from git that will
-  - install xcode
-  - install ansible
-  - ansible-pull .dotfiles
-    - install homebrew
-    - installs other homebrew/casks
-    - installs ruby gems
-    - installs node shit
-    - sets up OS X
-    - sets up shell
-    - links dotfiles
-
+- remove all provisioning from the dotfiles scripts
 
 
 Manual steps:
+---------------
+  xcode-select --install
+  git clone https://github.com/mjaskula/dotfiles.git .dotfiles
+  <edit provision.yml for machine type>
+  ./.dotfiles/provisioning/bootstrap.sh
 
-  bash <(curl -s https://raw.githubusercontent.com/mjaskula/dotfiles/master/provisioning/bootstrap.sh)
+TODO
+--------
+
+.dotfiles
+  - replace bin/dot with ansible
+    - OSX config
+    - APP config
+
+
+locate db:
+  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
 
 
-
-Role hierarchy:
-
-  - common
-    - base dev
-      - python dev
-      - java dev
-      - work
-    - home
+VM
+----------------
+EL Capitan VM:
+  http://www.insanelymac.com/forum/topic/309654-run-vanilla-os-x-el-capitan-yosemite-or-mavericks-in-virtualbox-5010-on-a-windows-host/
