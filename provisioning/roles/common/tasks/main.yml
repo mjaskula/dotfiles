@@ -18,6 +18,15 @@
   tags:
     - homebrew
 
+- name: install homebrew taps
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - homebrew/command-not-found
+  tags:
+    - homebrew
+
 - name: install homebrew casks
   homebrew_cask:
     name: "{{ item }}"

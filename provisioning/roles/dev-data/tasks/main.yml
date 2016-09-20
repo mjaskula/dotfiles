@@ -6,7 +6,7 @@
     state: present
   with_items:
     - postgres
-    - dockertoolbox
+    - docker
     - datagrip
   tags:
     - homebrew
