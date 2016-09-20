@@ -38,6 +38,7 @@
     rank-contributors = !$DOTFILES/bin/git-rank-contributors
     count   = !git shortlog -sn
     udiff = diff @{u}...HEAD
+    branchpoint = merge-base master head
 
 [apply]
     whitespace = nowarn
