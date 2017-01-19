@@ -21,5 +21,5 @@ alias purge_queues='rabbitmqadmin -f tsv -q list queues name | while read queue;
 alias serve='python -m SimpleHTTPServer'
 
 # today scripts
-alias ts_ips='dig +short myip.opendns.com @resolver1.opendns.com && ifconfig | grep "inet " | grep -v 127.0.0.1 | awk '"'"'{print $2}'"'"''
+alias ts_ips='dig +short myip.opendns.com @resolver1.opendns.com && ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d' ' -f2'
 alias ts_cal='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e)" -e "^$(date +%e)"'
