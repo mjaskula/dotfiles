@@ -33,6 +33,7 @@
     - virtualenv
     - virtualenvwrapper
     - ipython
+    - ptpython
   become: yes
   become_method: sudo
   environment:

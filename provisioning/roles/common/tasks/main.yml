@@ -40,10 +40,22 @@
 
 - name: "select dotfiles: ~/.dotfiles/<topic>/<file>.symlink"
   find:
+    file_type: file
     path: "{{ ansible_env.HOME}}/.dotfiles/"
     recurse: yes
     pattern: "*.symlink"
   register: files_to_symlink
+  tags:
+    - dotfiles
+    
+- name: "select dotfiles: ~/.dotfiles/<topic>/<dir>.symlink"
+  # this can be merged with the above using file_type: any in ansible 2.3
+  find:
+    file_type: directory
+    path: "{{ ansible_env.HOME}}/.dotfiles/"
+    recurse: yes
+    pattern: "*.symlink"
+  register: dirs_to_symlink
   tags:
     - dotfiles
 
@@ -52,7 +64,7 @@
     src: "{{ item.path }}"
     dest: "{{ ansible_env.HOME}}/.{{ item.path|basename|replace('.symlink', '') }}"
     state: link
-  with_items: "{{files_to_symlink.files}}"
+  with_items: "{{files_to_symlink.files + dirs_to_symlink.files}}"
   tags:
     - dotfiles
 
