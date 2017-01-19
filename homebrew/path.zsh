@@ -7,3 +7,5 @@ export PATH=/usr/local/share/python:$PATH
 export PATH=$PATH:/usr/local/opt/ruby/bin
 export PATH=$PATH:/opt/local/lib/mysql55/bin
 
+
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(brew --prefix openssl)/lib
