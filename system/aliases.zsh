@@ -13,7 +13,7 @@ fi
 alias pwdc='echo -n `pwd` | pbcopy'
 alias gpull='git stash save -u && git pull && git stash pop'
 alias mkdir="mkdir -p"
-
+alias ag='ag --color'
 
 # misc
 
