@@ -13,5 +13,15 @@
     - rlwrap
     - ssh-copy-id
     - colordiff
+    - tmux
   tags:
     - homebrew
+
+
+- name: Clone/Update tmux plugin manager repo
+  git:
+    repo: https://github.com/tmux-plugins/tpm 
+    dest: "{{ ansible_env.HOME}}/.tmux/plugins/tpm"
+  tags:
+    - homebrew
+
