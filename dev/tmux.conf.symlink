@@ -12,6 +12,12 @@ set -g set-titles-string "#T"
 #set-option -g default-command "reattach-to-user-namespace -l bash"
 
 set -g mouse on
+bind v \
+    set -g mouse off \;\
+    display 'Mouse: OFF'
+bind V \
+    set -g mouse on \;\
+    display 'Mouse: ON'
 
 # plugins to install
 set -g @plugin 'tmux-plugins/tmux-sensible'
