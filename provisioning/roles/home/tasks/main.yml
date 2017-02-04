@@ -1,12 +1,12 @@
 ---
 
-# - name: install homebrew packages
-#   homebrew:
-#     upgrade_all: no
-#     name: "{{ item }}"
-#     state: present
-#   with_items:
-#     - 
-#   tags:
-#     - homebrew
+- name: install homebrew packages
+  homebrew:
+    upgrade_all: no
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - rclone
+  tags:
+    - homebrew
 
