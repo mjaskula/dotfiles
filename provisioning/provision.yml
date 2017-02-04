@@ -1,6 +1,7 @@
 ---
+# Usage:  ansible-playbook -i provisioning/inventory provisioning/provision.yml -e "ROLE=<role>"
 
-- name: Provision a new machine
+- name: Applying role [{{ROLE}}]
   hosts: all
 
   pre_tasks:
@@ -9,11 +10,4 @@
 
 
   roles:
-    # eventually we'll want to be able to choose home/work
-    # probably based on hostname
-    - common
-    #- dev
-    #- dev-python
-    #- dev-data
-    #- dev-java
-    - {role: osx, tags: osx}
+  - { role: '{{ROLE}}' }
