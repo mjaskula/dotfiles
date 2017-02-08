@@ -10,6 +10,12 @@ set -g set-titles-string "#T"
 #set -g window-status-last-style fg=colour31
 
 #set-option -g default-command "reattach-to-user-namespace -l bash"
+# automatic renumbering on window close
+set-option -g renumber-windows on
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
 
 set -g mouse on
 bind v \
