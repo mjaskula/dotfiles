@@ -9,7 +9,6 @@ set -g set-titles-string "#T"
 #set -g status-style fg=colour231,bg=colour234
 #set -g window-status-last-style fg=colour31
 
-#set-option -g default-command "reattach-to-user-namespace -l bash"
 # automatic renumbering on window close
 set-option -g renumber-windows on
 

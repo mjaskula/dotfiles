@@ -16,6 +16,7 @@
     - ssh-copy-id
     - colordiff
     - tmux
+    - reattach-to-user-namespace
   tags:
     - homebrew
 
