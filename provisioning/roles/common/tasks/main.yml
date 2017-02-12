@@ -1,4 +1,9 @@
 ---
+# Common: stuff needed on all systems, including:
+# - basich shell and dotfile setup
+# - base commandline apps
+# - base OSX apps
+
 
 - name: install homebrew packages
   homebrew:
