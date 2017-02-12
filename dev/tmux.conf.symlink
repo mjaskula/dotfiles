@@ -25,6 +25,8 @@ bind V \
     set -g mouse on \;\
     display 'Mouse: ON'
 
+source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+
 # plugins to install
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-resurrect'

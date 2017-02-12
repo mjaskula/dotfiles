@@ -1,34 +1,11 @@
 ---
 
-- name: install homebrew packages
-  homebrew:
-    upgrade_all: no
-    name: "{{ item }}"
-    state: present
-  with_items: []
-    # looks like this no longer works with the current version of brew. Need a new way to get 2.7.10
-    # - "https://raw.githubusercontent.com/Homebrew/homebrew/cff239addef86cc2bdeac6d97bd57992540f2ace/Library/Formula/python.rb"
-  tags:
-    - homebrew
-    - python
-
-- name: install pip
-  easy_install: 
-    name: pip
-    state: present
-  become: yes
-  become_method: sudo
-  tags:
-    - python
-
 - name: install system level python packages
   pip:
     name: "{{ item }}"
     extra_args: --user
     state: latest
   with_items:
-    - setuptools
-    - pip
     - stevedore
     - virtualenv
     - virtualenvwrapper

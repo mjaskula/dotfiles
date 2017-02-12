@@ -15,6 +15,7 @@
     - zsh
     - watch
     - htop
+    - python # powerline dependency
   tags:
     - homebrew
 
@@ -37,6 +38,23 @@
     - slack
   tags:
     - homebrew
+
+- name: install system level python packages
+  pip:
+    name: "{{ item }}"
+    extra_args: --user
+    state: latest
+  with_items:
+    - setuptools
+    - pip
+    - powerline-status
+  become: yes
+  become_method: sudo
+  environment:
+    PIP_REQUIRE_VIRTUALENV: ""
+  tags:
+    - python
+
 
 - name: "select dotfiles: ~/.dotfiles/<topic>/<file>.symlink"
   find:
