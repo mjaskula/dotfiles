@@ -11,8 +11,6 @@
     - virtualenvwrapper
     - ipython
     - ptpython
-  become: yes
-  become_method: sudo
   environment:
     PIP_REQUIRE_VIRTUALENV: ""
   tags:

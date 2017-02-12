@@ -53,8 +53,6 @@
     - setuptools
     - pip
     - powerline-status
-  become: yes
-  become_method: sudo
   environment:
     PIP_REQUIRE_VIRTUALENV: ""
   tags:

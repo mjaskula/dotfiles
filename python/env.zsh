@@ -1,7 +1,7 @@
 export PIP_REQUIRE_VIRTUALENV=true
 
 syspip() {
-    PIP_REQUIRE_VIRTUALENV="" sudo pip "$@"
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
 export WORKON_HOME=$HOME/.virtualenvs
