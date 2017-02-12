@@ -3,11 +3,16 @@
 
 set -g set-titles on
 set -g set-titles-string "#T"
-#source "/Users/jon/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf"
-#source "/Users/jon/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline_tmux_1.9_plus.conf"
 
-#set -g status-style fg=colour231,bg=colour234
-#set -g window-status-last-style fg=colour31
+# remove slight delay when hitting esc
+set -s escape-time 0
+
+# since the 1.9 update, tmux no longer opens windows in the same directory as
+# the currently active window. why remove a useful feature, why change the interface?
+# whatever, re-implement manually:
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 
 # automatic renumbering on window close
 set-option -g renumber-windows on
