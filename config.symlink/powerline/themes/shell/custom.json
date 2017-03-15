@@ -23,7 +23,11 @@
                         },
                         {
                                 "function": "powerline.segments.shell.cwd",
-                                "args": {"dir_shorten_len": 1},
+                                "args": {
+                                  "dir_shorten_len": 1,
+                                  "ellipsis": null,
+                                  "dir_limit_depth": 1
+                                },
                                 "priority": 10
                         },
                         {
