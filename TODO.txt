@@ -1,9 +1,2 @@
-npm installs:
-
-  npm install -g mongo-hacker
-
-
-Convert provisioning to ansible
-
-
-TodayScripts for cal and IP
+https://github.com/awslabs/git-secrets
+http://stackoverflow.com/questions/39332407/git-hooks-applying-git-config-core-hookspath
