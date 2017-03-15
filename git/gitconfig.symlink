@@ -26,6 +26,7 @@
         autosetuprebase = always
 
 [alias]
+    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
     co = checkout
     st = status -sb                         # you check status a lot, the flags are for compact output
     stat = status
