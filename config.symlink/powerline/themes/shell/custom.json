@@ -17,11 +17,6 @@
                                 "priority": 50
                         },
                         {
-                                "function": "powerline.segments.common.env.environment",
-                                "priority": 50,
-                                "args": {"variable": "DWENV"}
-                        },
-                        {
                                 "function": "powerline.segments.shell.cwd",
                                 "args": {
                                   "dir_shorten_len": 1,
