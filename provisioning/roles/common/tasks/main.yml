@@ -19,6 +19,7 @@
     - the_silver_searcher
     - zsh
     - watch
+    - fswatch
     - htop
     - python # powerline dependency
   tags:
@@ -41,6 +42,7 @@
     - google-chrome
     - sublime-text
     - slack
+    - spectacle
   tags:
     - homebrew
 

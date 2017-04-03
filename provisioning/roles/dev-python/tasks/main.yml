@@ -11,6 +11,7 @@
     - virtualenvwrapper
     - ipython
     - ptpython
+    - pycharm
   environment:
     PIP_REQUIRE_VIRTUALENV: ""
   tags:
