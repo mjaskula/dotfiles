@@ -40,7 +40,7 @@
     count   = !git shortlog -sn
     udiff = diff @{u}...HEAD
     branchpoint = merge-base master head
-
+    leaderboard = shortlog -sn
 [apply]
     whitespace = nowarn
 
