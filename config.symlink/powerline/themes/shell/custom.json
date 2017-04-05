@@ -9,8 +9,12 @@
                                 "priority": 20
                         },
                         {
-                                "function": "powerline.segments.common.env.user",
-                                "priority": 30
+                                "function": "powerline.segments.common.time.date",
+                                "args": {
+				  "istime": false,
+				  "format": "%H:%M:%S"
+				},
+				"priority": 30
                         },
                         {
                                 "function": "powerline.segments.common.env.virtualenv",

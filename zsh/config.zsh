@@ -40,6 +40,7 @@ setopt HIST_IGNORE_SPACE  # don't record commands that start with a space
 setopt complete_aliases
 
 zle -N newtab
+zle -N accept-line _reset-prompt-and-accept-line
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
