@@ -2,3 +2,6 @@ syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+set listchars=eol:$,tab:>-,trail:·,extends:>,precedes:<
+set list
