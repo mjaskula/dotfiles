@@ -14,3 +14,4 @@
 #set line-number-interval = 5
 set tab-size = 2
 set split-view-width = 50%
+set mouse = true
