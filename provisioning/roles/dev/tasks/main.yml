@@ -17,6 +17,7 @@
     - colordiff
     - tmux
     - reattach-to-user-namespace
+    - vim --with-override-system-vi
   tags:
     - homebrew
 
