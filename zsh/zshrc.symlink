@@ -41,7 +41,7 @@ done
 
 unset config_files
 
-powerline=/usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+powerline=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 if [[ -a ${powerline} ]]
 then
   powerline-daemon -q
