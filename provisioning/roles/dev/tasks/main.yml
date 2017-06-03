@@ -20,6 +20,16 @@
   tags:
     - homebrew
 
+- name: install homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - font-hack
+  tags:
+    - homebrew
+
+
 
 - name: Clone/Update tmux plugin manager repo
   git:

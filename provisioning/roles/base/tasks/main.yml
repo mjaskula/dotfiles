@@ -34,9 +34,12 @@
   tags:
     - homebrew
 
-# - name: install homebrew taps
-#   homebrew_tap:
-#     name: "{{ item }}"
-#     state: present
-#   with_items:
-#     - caskroom/cask/brew-cask
+- name: install homebrew taps
+  homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - caskroom/fonts
+  tags:
+    - homebrew
+
