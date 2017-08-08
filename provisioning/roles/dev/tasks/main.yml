@@ -17,6 +17,7 @@
     - colordiff
     - tmux
     - reattach-to-user-namespace
+    - shellcheck
   tags:
     - homebrew
 

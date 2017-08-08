@@ -1,4 +1,4 @@
 #!/bin/sh
 role=$1
 shift
-ansible-playbook -i ~/.dotfiles/provisioning/inventory ~/.dotfiles/provisioning/provision.yml -e "ROLE=$role" $@
+ansible-playbook -i ~/.dotfiles/provisioning/inventory ~/.dotfiles/provisioning/provision.yml -e "ROLE=$role" "$@"
