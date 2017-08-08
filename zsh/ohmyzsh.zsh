@@ -45,3 +45,4 @@ plugins=(git gradle maven brew brew-cask pip zsh-syntax-highlighting fabric dock
 source $ZSH/oh-my-zsh.sh
 
 unset RPROMPT #kill the right prompt, it's annoying for copy from terminal
+unsetopt AUTO_CD
