@@ -41,6 +41,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git gradle maven brew brew-cask pip zsh-syntax-highlighting fabric docker command-not-found)
+#plugins=(git brew brew-cask pip zsh-syntax-highlighting docker command-not-found)
 
 source $ZSH/oh-my-zsh.sh
 
