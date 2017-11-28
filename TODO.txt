@@ -1,2 +1,6 @@
+https://github.com/caarlos0/dotfiles
 https://github.com/awslabs/git-secrets
 http://stackoverflow.com/questions/39332407/git-hooks-applying-git-config-core-hookspath
+chrome extensions
+update readme
+
