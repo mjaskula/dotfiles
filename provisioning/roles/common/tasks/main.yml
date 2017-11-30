@@ -22,6 +22,7 @@
     - fswatch
     - htop
     - python # powerline dependency
+    - tree
   tags:
     - homebrew
 
