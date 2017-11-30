@@ -39,10 +39,15 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - 1password
+    - amazon-music
+    - disk-inventory-x
+    - dropbox
     - google-chrome
     - atom
     - slack
     - spectacle
+    - spotify
     - supersync
     - iterm2
   tags:
