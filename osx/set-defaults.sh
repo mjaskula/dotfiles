@@ -383,13 +383,6 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 # defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
-# Sublime Text                                                                #
-###############################################################################
-
-# Install Sublime Text settings
-cp -r ${DOTFILES}/sublime/User/* ~/Library/Application\ Support/Sublime\ Text*/Packages/User/ 2> /dev/null
-
-###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 

@@ -1,0 +1,23 @@
+"*":
+  core:
+    telemetryConsent: "limited"
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    fontSize: 12
+  "exception-reporting":
+    userId: "753ab741-277a-4f54-86bc-8fb1c97e3f3d"
+  "spell-check":
+    addKnownWords: true
+    knownWords: [
+      "pyline"
+      "findb"
+      "PRs"
+    ]
+    localePaths: [
+      "~/.user_dictionary"
+    ]
+  welcome:
+    showOnStartup: false
