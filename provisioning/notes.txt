@@ -16,14 +16,21 @@ TODO
 --------
 
 .dotfiles
-  - replace bin/dot with ansible
-    - OSX config
-    - APP config
+  - OSX config
+  - APP config
+
+
+apps:
+-----
+pulse secure
 
 
 locate db:
   sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
+atom editor:
+  save: apm list --installed --bare > ~/.atom/package.list
+  load: apm install --packages-file ~/.atom/package.list
 
 
 VM
