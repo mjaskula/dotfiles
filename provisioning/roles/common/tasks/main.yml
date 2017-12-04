@@ -78,7 +78,7 @@
   register: files_to_symlink
   tags:
     - dotfiles
-    
+
 - name: "select dotfiles: ~/.dotfiles/<topic>/<dir>.symlink"
   # this can be merged with the above using file_type: any in ansible 2.3
   find:
@@ -108,19 +108,19 @@
 - name: Enable zsh in /etc/shells
   become: yes
   become_method: sudo
-  when: current_shell.stdout != "{{zsh_path}}"
+  when: current_shell.stdout != zsh_path
   shell: /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
   tags:
     - zsh
 
 - name: Set zsh as default shell
   shell: chsh -s {{ zsh_path }}
-  when: current_shell.stdout != "{{zsh_path}}"
+  when: current_shell.stdout != zsh_path
   tags:
     - zsh
 
 - name: Clone/Update oh-my-zsh repo
-  git: 
+  git:
     repo: https://github.com/robbyrussell/oh-my-zsh.git
     dest: "{{ ansible_env.HOME}}/.oh-my-zsh"
   tags:
