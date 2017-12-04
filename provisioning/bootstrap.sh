@@ -3,9 +3,6 @@
 xcode-select --install
 set -e
 
-echo "  fixing ownership of /usr/local"
-sudo chown -R $(whoami):admin /usr/local
-
 if test ! $(which brew); then
   echo "  Installing Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -18,4 +15,4 @@ if test ! $(which ansible); then
   brew install ansible
 fi
 
-ansible-playbook --ask-sudo-pass -i ~/.dotfiles/provisioning/inventory ~/.dotfiles/provisioning/provision.yml
+~/.dotfiles/bin/provision common
