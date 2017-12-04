@@ -7,10 +7,10 @@ Goals:
 
 Manual steps:
 ---------------
-  xcode-select --install
   git clone https://github.com/mjaskula/dotfiles.git .dotfiles
-  <edit provision.yml for machine type>
   ./.dotfiles/provisioning/bootstrap.sh
+  ./dotfiles/git/git_setup.sh
+
 
 TODO
 --------
