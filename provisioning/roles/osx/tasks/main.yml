@@ -1,147 +1,156 @@
 ---
 
-- name: OSX Sys Config | System
-  shell: "{{ item }}"
-  with_items: 
-   - "{{ osx_config.system }}"
-  become: yes
-  become_method: sudo
+# - name: OSX Sys Config | System
+#   shell: "{{ item }}"
+#   with_items:
+#    - "{{ osx_config.system }}"
+#   become: yes
+#   become_method: sudo
 
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
-  
-# - name: Set highlight color to grey
-#   osx_defaults: domain=NSGlobalDomain key=AppleHighlightColor value="0.847059 0.847059 0.862745"
+- name: Appearance to Grey
+  osx_defaults: key=AppleAquaColorVariant type=int value=6
+
+- name: Set highlight color to grey
+  osx_defaults: key=AppleHighlightColor value="0.847059 0.847059 0.862745"
 
 - name: Set dark mode
-  osx_defaults: domain=NSGlobalDomain key=AppleInterfaceStyle value=Dark
+  osx_defaults: key=AppleInterfaceStyle value=Dark
 
 - name: Set sidebar icon size to small
   osx_defaults: domain=NSGlobalDomain key=NSTableViewDefaultSizeMode type=int value=1
 
-# - name: Always show scrollbars
-#   osx_defaults: domain=NSGlobalDomain key=AppleShowScrollBars value="Always"
+- name: Always show scrollbars
+  osx_defaults: domain=NSGlobalDomain key=AppleShowScrollBars value="Always"
 
-- name: Expand save panel by default
-  osx_defaults: domain=NSGlobalDomain key=NSNavPanelExpandedStateForSaveMode type=bool value=true
+- name: Keep windows when quitting an app
+  osx_defaults: domain=NSGlobalDomain key=NSQuitAlwaysKeepsWindows type=int value=1
 
-- name: Expand save panel by default 2
-  osx_defaults: domain=NSGlobalDomain key=NSNavPanelExpandedStateForSaveMode2 type=bool value=true
 
-- name: Expand print panel by default
-  osx_defaults: domain=NSGlobalDomain key=PMPrintingExpandedStateForPrint type=bool value=true
+# - name: Expand save panel by default
+#   osx_defaults: domain=NSGlobalDomain key=NSNavPanelExpandedStateForSaveMode type=bool value=true
+#
+# - name: Expand save panel by default 2
+#   osx_defaults: domain=NSGlobalDomain key=NSNavPanelExpandedStateForSaveMode2 type=bool value=true
+#
+# - name: Expand print panel by default
+#   osx_defaults: domain=NSGlobalDomain key=PMPrintingExpandedStateForPrint type=bool value=true
+#
+# - name: Expand print panel by default 2
+#   osx_defaults: domain=NSGlobalDomain key=PMPrintingExpandedStateForPrint2 type=bool value=true
+#
+# - name: Save to disk (not to iCloud) by default
+#   osx_defaults: domain=NSGlobalDomain key=NSDocumentSaveNewDocumentsToCloud type=bool value=false
+#
+# - name: Automatically quit printer app once the print jobs complete
+#   osx_defaults: domain=com.apple.print.PrintingPrefs key="Quit When Finished" type=bool value=true
+#
+# - name: Disable the “Are you sure you want to open this application?” dialog
+#   osx_defaults: domain=com.apple.LaunchServices key=LSQuarantine type=bool value=false
+#
+# # - name: Reveal IP address, hostname, etc. when clicking the clock in the login window
+# #   osx_defaults: domain=/Library/Preferences/com.apple.loginwindow key=AdminHostInfo value=HostName
+# #   become: yes
+# #   become_method: sudo
+#
+# - name: Disable smart quotes as they’re annoying when typing code
+#   osx_defaults: domain=NSGlobalDomain key=NSAutomaticQuoteSubstitutionEnabled type=bool value=false
+#
+# - name: Disable smart dashes as they’re annoying when typing code
+#   osx_defaults: domain=NSGlobalDomain key=NSAutomaticDashSubstitutionEnabled type=bool value=false
+#
+- name: Hide the dock
+  osx_defaults: domain=com.apple.dock key=autohide type=int value=1
 
-- name: Expand print panel by default 2
-  osx_defaults: domain=NSGlobalDomain key=PMPrintingExpandedStateForPrint2 type=bool value=true
-
-- name: Save to disk (not to iCloud) by default
-  osx_defaults: domain=NSGlobalDomain key=NSDocumentSaveNewDocumentsToCloud type=bool value=false
-
-- name: Automatically quit printer app once the print jobs complete
-  osx_defaults: domain=com.apple.print.PrintingPrefs key="Quit When Finished" type=bool value=true
-
-- name: Disable the “Are you sure you want to open this application?” dialog
-  osx_defaults: domain=com.apple.LaunchServices key=LSQuarantine type=bool value=false
-
-# - name: Reveal IP address, hostname, etc. when clicking the clock in the login window
-#   osx_defaults: domain=/Library/Preferences/com.apple.loginwindow key=AdminHostInfo value=HostName
-#   become: yes
-#   become_method: sudo
-
-- name: Disable smart quotes as they’re annoying when typing code
-  osx_defaults: domain=NSGlobalDomain key=NSAutomaticQuoteSubstitutionEnabled type=bool value=false
-
-- name: Disable smart dashes as they’re annoying when typing code
-  osx_defaults: domain=NSGlobalDomain key=NSAutomaticDashSubstitutionEnabled type=bool value=false
-
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
-
-- name: Enable “natural” scrolling
-  osx_defaults: domain=NSGlobalDomain key=com.apple.swipescrolldirection type=bool value=true
-
-- name: Enable full keyboard access for all controls
-  osx_defaults: domain=NSGlobalDomain key=AppleKeyboardUIMode type=int value=3
-
-- name: Disable press-and-hold for keys in favor of key repeat
-  osx_defaults: domain=NSGlobalDomain key=ApplePressAndHoldEnabled type=bool value=false
-
+# ###############################################################################
+# # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+# ###############################################################################
+#
+# - name: Enable full keyboard access for all controls
+#   osx_defaults: domain=NSGlobalDomain key=AppleKeyboardUIMode type=int value=3
+#
+# - name: Disable press-and-hold for keys in favor of key repeat
+#   osx_defaults: domain=NSGlobalDomain key=ApplePressAndHoldEnabled type=bool value=false
+#
 - name: Set a fast keyboard repeat rate
-  osx_defaults: domain=NSGlobalDomain key=KeyRepeat type=int value=2
+  osx_defaults: key=KeyRepeat type=int value=2
 
 - name: Set a fast delay until repeat
-  osx_defaults: domain=NSGlobalDomain key=InitialKeyRepeat type=int value=15
+  osx_defaults: key=InitialKeyRepeat type=int value=15
 
-###############################################################################
-# Screen                                                                      #
-###############################################################################
+# ###############################################################################
+# # Screen                                                                      #
+# ###############################################################################
+#
+# - name: Require password after sleep or screen saver
+#   osx_defaults: domain=com.apple.screensaver key=askForPassword type=int value=1
+#
+# - name: Require password immediately after sleep or screen saver begins
+#   osx_defaults: domain=com.apple.screensaver key=askForPasswordDelay type=float value=0
+#
+# ###############################################################################
+# # Finder                                                                      #
+# ###############################################################################
+#
+# - name: Finder- allow quitting via ⌘Q
+#   osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
+#
+# - name: Finder- disable window animations and Get Info animations
+#   osx_defaults: domain=com.apple.finder key=DisableAllAnimations type=bool value=true
+#
+# # - name: Set Documents as the default location for new Finder windows
+# # osx_defaults: domain=com.apple.finder key=NewWindowTarget type=string  value="PfLo"
+# # osx_defaults: domain=com.apple.finder key=NewWindowTargetPath type=string  value="file://${HOME}/Documents/"
+#
+# - name: Finder- show all filename extensions
+#   osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
+#
+# - name: Finder- show status bar
+#   osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
+#
+# - name: Finder- show path bar
+#   osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
+#
+# - name: Finder- allow text selection in Quick Look
+#   osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=true
+#
+# - name: Display full POSIX path as Finder window title
+#   osx_defaults: domain=com.apple.finder key=_FXShowPosixPathInTitle type=bool value=true
+#
+# - name: Avoid creating .DS_Store files on network volumes
+#   osx_defaults: domain=com.apple.desktopservices key=DSDontWriteNetworkStores type=bool value=true
+#
+# # - name: Use list view in all Finder windows by default
+# #   osx_defaults: domain=com.apple.finder key=FXPreferredViewStyle type=string value="Nlsv"
+#
+# - name: Disable the warning before emptying the Trash
+#   osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
+#
+#
+# ###############################################################################
+# # Terminal & iTerm 2                                                          #
+# ###############################################################################
+#
+# # - name: Set terminal default window
+# #   osx_defaults: domain=com.apple.terminal key='Default Window Settings' type=string value=Pro
+#
+# # - name: Set terminal startup window
+# #   osx_defaults: domain=com.apple.terminal key='Startup Window Settings' type=string value=Pro
 
-- name: Require password after sleep or screen saver
-  osx_defaults: domain=com.apple.screensaver key=askForPassword type=int value=1
-
-- name: Require password immediately after sleep or screen saver begins
-  osx_defaults: domain=com.apple.screensaver key=askForPasswordDelay type=float value=0
-
-###############################################################################
-# Finder                                                                      #
-###############################################################################
-
-- name: Finder- allow quitting via ⌘Q
-  osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
-
-- name: Finder- disable window animations and Get Info animations
-  osx_defaults: domain=com.apple.finder key=DisableAllAnimations type=bool value=true
-
-# - name: Set Documents as the default location for new Finder windows
-# osx_defaults: domain=com.apple.finder key=NewWindowTarget type=string  value="PfLo"
-# osx_defaults: domain=com.apple.finder key=NewWindowTargetPath type=string  value="file://${HOME}/Documents/"
-
-- name: Finder- show all filename extensions
-  osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
-
-- name: Finder- show status bar
-  osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
-
-- name: Finder- show path bar
-  osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
-
-- name: Finder- allow text selection in Quick Look
-  osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=true
-
-- name: Display full POSIX path as Finder window title
-  osx_defaults: domain=com.apple.finder key=_FXShowPosixPathInTitle type=bool value=true
-
-- name: Avoid creating .DS_Store files on network volumes
-  osx_defaults: domain=com.apple.desktopservices key=DSDontWriteNetworkStores type=bool value=true
-
-# - name: Use list view in all Finder windows by default
-#   osx_defaults: domain=com.apple.finder key=FXPreferredViewStyle type=string value="Nlsv"
-
-- name: Disable the warning before emptying the Trash
-  osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
-
-
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# - name: Set terminal default window
-#   osx_defaults: domain=com.apple.terminal key='Default Window Settings' type=string value=Pro
-
-# - name: Set terminal startup window
-#   osx_defaults: domain=com.apple.terminal key='Startup Window Settings' type=string value=Pro
-
+# Missing settings:
+#  - capslock as escape/control
+#  - touch bar config
 
 
 
 
 - name: Restart things so that changes take effect
   shell: "{{ item }}"
-  with_items: 
+  with_items:
    - killall Dock
    - killall Finder
    - killall SystemUIServer
