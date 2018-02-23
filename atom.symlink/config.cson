@@ -1,4 +1,8 @@
 "*":
+  "autocomplete-plus":
+    fileBlacklist: [
+      "*.txt"
+    ]
   core:
     telemetryConsent: "limited"
     themes: [
