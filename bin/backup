@@ -1,3 +1,6 @@
 #!/bin/sh
 
-/usr/local/bin/rsync -aNHAXx --protect-args --fileflags --force-change --progress --rsync-path="/opt/local/bin/rsync" $@
+BACKUP_REMOTE="mybookduo"
+BACKUP_ROOT="/shares/Public/Backup"
+
+rclone sync -n -vvv ~/$1/ $BACKUP_REMOTE:$BACKUP_ROOT/Heron/$1/
