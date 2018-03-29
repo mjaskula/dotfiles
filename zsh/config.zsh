@@ -37,7 +37,7 @@ setopt HIST_IGNORE_SPACE  # don't record commands that start with a space
 
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
-setopt complete_aliases
+#setopt complete_aliases
 
 zle -N newtab
 zle -N accept-line _reset-prompt-and-accept-line
