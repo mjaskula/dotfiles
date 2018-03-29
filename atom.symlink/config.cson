@@ -10,7 +10,10 @@
       "atom-dark-syntax"
     ]
   editor:
-    fontSize: 12
+    fontSize: 13
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
   "exception-reporting":
     userId: "753ab741-277a-4f54-86bc-8fb1c97e3f3d"
   "spell-check":

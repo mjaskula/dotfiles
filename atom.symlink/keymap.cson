@@ -39,3 +39,6 @@
 
 '.platform-darwin atom-text-editor':
   'cmd-d': 'editor:delete-line'
+
+'atom-text-editor':
+  'shift-cmd-j': 'pretty-json:prettify'
