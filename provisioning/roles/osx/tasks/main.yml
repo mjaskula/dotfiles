@@ -12,6 +12,9 @@
 # General UI/UX                                                               #
 ###############################################################################
 
+# check with somethig like
+# $ defaults read NSGlobalDomain AppleShowScrollBars
+
 - name: Appearance to Grey
   osx_defaults: key=AppleAquaColorVariant type=int value=6
 
@@ -72,15 +75,15 @@
 #
 # - name: Enable full keyboard access for all controls
 #   osx_defaults: domain=NSGlobalDomain key=AppleKeyboardUIMode type=int value=3
-#
-# - name: Disable press-and-hold for keys in favor of key repeat
-#   osx_defaults: domain=NSGlobalDomain key=ApplePressAndHoldEnabled type=bool value=false
-#
+
+- name: Disable press-and-hold for keys in favor of key repeat
+  osx_defaults: domain=NSGlobalDomain key=ApplePressAndHoldEnabled type=bool value=false
+
 - name: Set a fast keyboard repeat rate
   osx_defaults: key=KeyRepeat type=int value=2
 
 - name: Set a fast delay until repeat
-  osx_defaults: key=InitialKeyRepeat type=int value=15
+  osx_defaults: key=InitialKeyRepeat type=int value=10
 
 # ###############################################################################
 # # Screen                                                                      #
