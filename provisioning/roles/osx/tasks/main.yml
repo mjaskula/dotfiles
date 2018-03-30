@@ -112,15 +112,12 @@
 # - name: Finder- show all filename extensions
 #   osx_defaults: domain=NSGlobalDomain key=AppleShowAllExtensions type=bool value=true
 #
-# - name: Finder- show status bar
-#   osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
-#
-# - name: Finder- show path bar
-#   osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
-#
-# - name: Finder- allow text selection in Quick Look
-#   osx_defaults: domain=com.apple.finder key=QLEnableTextSelection type=bool value=true
-#
+- name: Finder- show status bar
+  osx_defaults: domain=com.apple.finder key=ShowStatusBar type=bool value=true
+
+- name: Finder- show path bar
+  osx_defaults: domain=com.apple.finder key=ShowPathbar type=bool value=true
+
 # - name: Display full POSIX path as Finder window title
 #   osx_defaults: domain=com.apple.finder key=_FXShowPosixPathInTitle type=bool value=true
 #
@@ -130,8 +127,8 @@
 # # - name: Use list view in all Finder windows by default
 # #   osx_defaults: domain=com.apple.finder key=FXPreferredViewStyle type=string value="Nlsv"
 #
-# - name: Disable the warning before emptying the Trash
-#   osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
+- name: Disable the warning before emptying the Trash
+  osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
 #
 #
 # ###############################################################################
