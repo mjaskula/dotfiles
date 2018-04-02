@@ -98,10 +98,10 @@
 # ###############################################################################
 # # Finder                                                                      #
 # ###############################################################################
-#
-# - name: Finder- allow quitting via ⌘Q
-#   osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
-#
+
+- name: Finder- allow quitting via ⌘Q
+  osx_defaults: domain=com.apple.finder key=QuitMenuItem type=bool  value=true
+
 # - name: Finder- disable window animations and Get Info animations
 #   osx_defaults: domain=com.apple.finder key=DisableAllAnimations type=bool value=true
 #
@@ -129,17 +129,30 @@
 #
 - name: Disable the warning before emptying the Trash
   osx_defaults: domain=com.apple.finder key=WarnOnEmptyTrash type=bool value=false
-#
-#
-# ###############################################################################
-# # Terminal & iTerm 2                                                          #
-# ###############################################################################
-#
-# # - name: Set terminal default window
-# #   osx_defaults: domain=com.apple.terminal key='Default Window Settings' type=string value=Pro
-#
-# # - name: Set terminal startup window
-# #   osx_defaults: domain=com.apple.terminal key='Startup Window Settings' type=string value=Pro
+
+- name: menu - set items
+  osx_defaults:
+    domain: com.apple.systemuiserver
+    key: menuExtras
+    type: array
+    value:
+      - "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
+      - "/System/Library/CoreServices/Menu Extras/AirPort.menu"
+      - "/System/Library/CoreServices/Menu Extras/Volume.menu"
+      - "/System/Library/CoreServices/Menu Extras/Battery.menu"
+      - "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+- name: menu - show battery percentage
+  osx_defaults: domain=com.apple.menuextra.battery key=ShowPercent type=string value=YES
+
+- name: menu - show date
+  osx_defaults: domain=com.apple.menuextra.clock key=DateFormat type=string value="EEE MMM  d H:mm:ss"
+
+- name: menu - don't flash date separators
+  osx_defaults: domain=com.apple.menuextra.clock key=FlashDateSeparators type=bool value=false
+
+- name: menu - clock not analog
+  osx_defaults: domain=com.apple.menuextra.clock key=IsAnalog type=bool value=false
 
 # Missing settings:
 #  - capslock as escape/control
