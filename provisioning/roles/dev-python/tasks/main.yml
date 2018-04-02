@@ -16,7 +16,7 @@
   tags:
     - python
 
-me: install homebrew casks
+- name: install homebrew casks
   homebrew_cask:
     name: "{{ item }}"
     state: present
@@ -24,4 +24,3 @@ me: install homebrew casks
     - pycharm
   tags:
     - homebrew
-
