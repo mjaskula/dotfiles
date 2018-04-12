@@ -6,11 +6,11 @@
     extra_args: --user
     state: latest
   with_items:
+    - ipython
+    - ptpython
     - stevedore
     - virtualenv
     - virtualenvwrapper
-    - ipython
-    - ptpython
   environment:
     PIP_REQUIRE_VIRTUALENV: ""
   tags:

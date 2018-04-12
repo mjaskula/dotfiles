@@ -8,16 +8,16 @@
     name: "{{ item }}"
     state: present
   with_items:
+    - colordiff
     - git
-    - tig
     - git-extras
     - gti
-    - rlwrap
-    - ssh-copy-id
-    - colordiff
-    - tmux
     - reattach-to-user-namespace
+    - rlwrap
     - shellcheck
+    - ssh-copy-id
+    - tig
+    - tmux
   tags:
     - homebrew
 

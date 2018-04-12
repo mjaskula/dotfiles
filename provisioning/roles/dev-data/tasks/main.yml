@@ -6,7 +6,7 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - kubernetes-cli 
+    - kubernetes-cli
     - kubernetes-helm
   tags:
     - homebrew
@@ -17,8 +17,8 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - postgres
-    - docker
     - datagrip
+    - docker
+    - postgres
   tags:
     - homebrew

@@ -12,17 +12,16 @@
     state: present
   with_items:
     - coreutils
-    - moreutils
     - findutils
-    # - homebrew/dupes/grep
-    - grc
-    - the_silver_searcher
-    - zsh
-    - watch
     - fswatch
+    - grc
     - htop
+    - moreutils
     - python # powerline dependency
+    - the_silver_searcher
     - tree
+    - watch
+    - zsh
   tags:
     - homebrew
 
@@ -42,16 +41,16 @@
   with_items:
     - 1password
     - amazon-music
+    - atom
     - disk-inventory-x
     - dropbox
+    - font-hack
     - google-chrome
-    - atom
+    - iterm2
     - slack
     - spectacle
     - spotify
     - supersync
-    - iterm2
-    - font-hack
   tags:
     - homebrew
 
