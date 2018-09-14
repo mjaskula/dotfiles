@@ -39,7 +39,6 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - caskroom/fonts
+    - homebrew/cask-fonts
   tags:
     - homebrew
-
