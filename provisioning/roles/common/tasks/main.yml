@@ -20,6 +20,7 @@
     - python # powerline dependency
     - the_silver_searcher
     - tree
+    - teensy_loader_cli
     - watch
     - zsh
   tags:
@@ -52,6 +53,7 @@
     - spectacle
     - spotify
     - supersync
+    - teensy
   tags:
     - homebrew
 

@@ -11,6 +11,7 @@
     ]
   editor:
     fontSize: 13
+    preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
     softWrap: true

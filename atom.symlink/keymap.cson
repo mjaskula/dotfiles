@@ -36,6 +36,8 @@
   'alt-up': 'editor:move-line-up'
   'alt-cmd-down': 'editor:duplicate-lines'
   'cmd-d': 'editor:delete-line'
+  'alt-shift-up': 'editor:add-selection-above'
+  'alt-shift-down': 'editor:add-selection-below'
 
 '.platform-darwin atom-text-editor':
   'cmd-d': 'editor:delete-line'
