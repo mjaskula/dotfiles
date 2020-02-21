@@ -7,3 +7,10 @@ filetype indent plugin on
 
 set listchars=eol:$,tab:>-,trail:·,extends:>,precedes:<
 set list
+
+" Turn on spell check
+set spell
+
+" Turn on spell check for only git commit messages
+" autocmd FileType gitcommit setlocal spell
+
