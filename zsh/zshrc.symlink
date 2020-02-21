@@ -48,3 +48,9 @@ then
   . ${powerline}
 fi
 
+
+# Created by `userpath` on 2019-09-16 14:01:00
+export PATH="$PATH:/Users/mjaskula/.local/bin"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
