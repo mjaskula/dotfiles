@@ -6,11 +6,11 @@ syspip() {
 
 export WORKON_HOME=$HOME/.virtualenvs
 
-VENVWRAPPER="$(which virtualenvwrapper.sh)"
-if [[ -e $VENVWRAPPER ]]
-then
-  source $VENVWRAPPER
-fi
+# VENVWRAPPER="$(which virtualenvwrapper.sh)"
+# if [[ -e $VENVWRAPPER ]]
+# then
+#   source $VENVWRAPPER
+# fi
 
 # eval "$(register-python-argcomplete pipx)"
 
