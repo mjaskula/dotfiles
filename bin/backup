@@ -3,4 +3,4 @@
 BACKUP_REMOTE="mybookduo"
 BACKUP_ROOT="/shares/Public/Backup"
 
-rclone sync -n -vvv ~/$1/ $BACKUP_REMOTE:$BACKUP_ROOT/Heron/$1/
+rclone sync -vvv ~/$1/ $BACKUP_REMOTE:$BACKUP_ROOT/Heron/$1/
