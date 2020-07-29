@@ -17,16 +17,8 @@
       - teensy_loader_cli
       - tig
       - tmux
+      - vim
     state: present
-  tags:
-    - homebrew
-
-- name: install homebrew vim
-  homebrew:
-    upgrade_all: no
-    name: vim
-    state: present
-    install_options: with-override-system-vi
   tags:
     - homebrew
 
