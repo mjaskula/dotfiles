@@ -8,21 +8,19 @@
 - name: install homebrew packages
   homebrew:
     upgrade_all: no
-    name: "{{ item }}"
+    package:
+      - coreutils
+      - findutils
+      - fswatch
+      - grc
+      - htop
+      - moreutils
+      - python # powerline dependency
+      - the_silver_searcher
+      - tree
+      - watch
+      - zsh
     state: present
-  with_items:
-    - coreutils
-    - findutils
-    - fswatch
-    - grc
-    - htop
-    - moreutils
-    - python # powerline dependency
-    - the_silver_searcher
-    - tree
-    - teensy_loader_cli
-    - watch
-    - zsh
   tags:
     - homebrew
 
@@ -53,7 +51,6 @@
     - spectacle
     - spotify
     - supersync
-    - teensy
   tags:
     - homebrew
 

@@ -13,10 +13,9 @@
 - name: install homebrew packages
   homebrew:
     upgrade_all: no
-    name: "{{ item }}"
+    package:
+      - maven
+      - gradle
     state: present
-  with_items:
-    - maven
-    - gradle
   tags:
     - homebrew

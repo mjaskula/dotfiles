@@ -5,19 +5,19 @@
 - name: install homebrew packages
   homebrew:
     upgrade_all: no
-    name: "{{ item }}"
+    package:
+      - colordiff
+      - git
+      - git-extras
+      - gti
+      - reattach-to-user-namespace
+      - rlwrap
+      - shellcheck
+      - ssh-copy-id
+      - teensy_loader_cli
+      - tig
+      - tmux
     state: present
-  with_items:
-    - colordiff
-    - git
-    - git-extras
-    - gti
-    - reattach-to-user-namespace
-    - rlwrap
-    - shellcheck
-    - ssh-copy-id
-    - tig
-    - tmux
   tags:
     - homebrew
 
@@ -30,6 +30,14 @@
   tags:
     - homebrew
 
+- name: install homebrew casks
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - teensy
+  tags:
+    - homebrew
 
 - name: Clone/Update tmux plugin manager repo
   git:
