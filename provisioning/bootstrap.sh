@@ -10,9 +10,15 @@ fi
 
 #TODO: update the PATH? export PATH=/usr/local/bin:$PATH
 
+if test ! $(which pipx); then
+  echo "  Installing pipx"
+  brew install pipx
+  export PATH="$PATH:/Users/matthew/.local/bin"
+fi
+
 if test ! $(which ansible); then
   echo "  Installing ansible"
-  brew install ansible
+  pipx install ansible
 fi
 
 ~/.dotfiles/bin/provision common
