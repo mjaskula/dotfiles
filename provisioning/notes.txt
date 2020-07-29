@@ -22,18 +22,6 @@ TODO
 
 apps:
 -----
-pulse secure
-
-
-locate db:
-  sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
-
 atom editor:
   save: apm list --installed --bare > ~/.atom/package.list
   load: apm install --packages-file ~/.atom/package.list
-
-
-VM
-----------------
-EL Capitan VM:
-  http://www.insanelymac.com/forum/topic/309654-run-vanilla-os-x-el-capitan-yosemite-or-mavericks-in-virtualbox-5010-on-a-windows-host/
