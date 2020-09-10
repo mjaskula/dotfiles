@@ -64,6 +64,7 @@ endif
 " Personal customizations below
 "
 
+set showcmd
 
 " search
 set hlsearch
@@ -76,8 +77,7 @@ set listchars=eol:$,tab:>-,trail:·,extends:>,precedes:<
 set list
 
 " Turn on spell check
-set spell
+"set spell
 
 " Turn on spell check for only git commit messages
 " autocmd FileType gitcommit setlocal spell
-
