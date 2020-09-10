@@ -1,20 +1,15 @@
 ---
 
-- name: install system level python packages
-  pip:
+- name: install homebrew packages
+  homebrew:
+    upgrade_all: no
     name: "{{ item }}"
-    extra_args: --user
-    state: latest
+    state: present
   with_items:
-    - ipython
-    - ptpython
-    - stevedore
-    - virtualenv
-    - virtualenvwrapper
-  environment:
-    PIP_REQUIRE_VIRTUALENV: ""
+    - pyenv
+    - pyenv-virtualenv
   tags:
-    - python
+    - homebrew
 
 - name: install homebrew casks
   homebrew_cask:

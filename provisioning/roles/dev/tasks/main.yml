@@ -10,6 +10,7 @@
       - git
       - git-extras
       - gti
+      - pipx
       - reattach-to-user-namespace
       - rlwrap
       - shellcheck
