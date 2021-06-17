@@ -1,0 +1,5 @@
+#!/bin/sh
+
+for path_to_jdk in $(ls -d /Library/Java/JavaVirtualMachines/*/Contents/Home); do
+  jenv add $path_to_jdk;
+done
