@@ -4,3 +4,5 @@ http://stackoverflow.com/questions/39332407/git-hooks-applying-git-config-core-h
 chrome extensions
 update readme
 
+remove powerline
+general speedup
