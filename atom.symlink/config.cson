@@ -3,6 +3,8 @@
     fileBlacklist: [
       "*.txt"
     ]
+  autosave:
+    enabled: true
   core:
     telemetryConsent: "limited"
     themes: [
