@@ -1,5 +1,8 @@
 # JAVA
 
+eval "$(jenv init -)"
+#jenv enable-plugin export  # not sure if this is needed in every shell
+
 if [[ `/usr/libexec/java_home 2>/dev/null` ]]
 then
   export JAVA_HOME=`/usr/libexec/java_home`
