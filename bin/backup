@@ -1,6 +1,7 @@
 #!/bin/sh
+set -x
 
-BACKUP_REMOTE="mybookduo"
-BACKUP_ROOT="/shares/Public/Backup"
+SRC=${1}
+DEST="${2}"
 
-rclone sync -vvv ~/$1/ $BACKUP_REMOTE:$BACKUP_ROOT/Heron/$1/
+rsync -rlptDivxzP ~/${SRC} rsync://matthew@192.168.42.2:/${DEST}/
