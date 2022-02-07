@@ -4,17 +4,12 @@ syspip() {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-export WORKON_HOME=$HOME/.virtualenvs
-
-# VENVWRAPPER="$(which virtualenvwrapper.sh)"
-# if [[ -e $VENVWRAPPER ]]
-# then
-#   source $VENVWRAPPER
-# fi
-
-# eval "$(register-python-argcomplete pipx)"
-
 if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+if which pyenv-virtualenv-init > /dev/null; then
+  eval "$(pyenv virtualenv-init -)"
+fi
