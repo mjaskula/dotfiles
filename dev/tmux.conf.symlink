@@ -34,6 +34,7 @@ bind V \
 
 # cycle zoomed panes
 bind -r a select-pane -t .+1 \;  resize-pane -Z
+bind b last-window
 
 source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
 
