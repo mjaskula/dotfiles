@@ -5,7 +5,7 @@ set -e
 
 if test ! $(which brew); then
   echo "  Installing Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 #TODO: update the PATH? export PATH=/usr/local/bin:$PATH
@@ -13,12 +13,15 @@ fi
 if test ! $(which pipx); then
   echo "  Installing pipx"
   brew install pipx
-  export PATH="$PATH:/Users/matthew/.local/bin"
 fi
+
+export PATH="$PATH:~/.local/bin"
 
 if test ! $(which ansible); then
   echo "  Installing ansible"
-  pipx install ansible
+  pipx install ansible-base
 fi
 
-~/.dotfiles/bin/provision common
+ansible-galaxy collection install community.general
+
+~/.dotfiles/bin/provision common --ask-become

@@ -6,7 +6,7 @@
 
 
 - name: install homebrew packages
-  homebrew:
+  community.general.homebrew:
     upgrade_all: no
     package:
       - coreutils
@@ -42,11 +42,12 @@
     - amazon-music
     - atom
     - disk-inventory-x
+    - discord
     - dropbox
     - font-hack
-    - google-chrome
+    # - google-chrome
     - iterm2
-    - slack
+    # - slack
     - spectacle
     - spotify
     - supersync
