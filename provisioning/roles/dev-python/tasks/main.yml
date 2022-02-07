@@ -16,6 +16,5 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - pycharm
   tags:
     - homebrew
