@@ -1,6 +1,8 @@
 # JAVA
 
-eval "$(jenv init -)"
+if command -v jenv 1>/dev/null 2>&1; then
+  eval "$(jenv init -)"
+fi
 #jenv enable-plugin export  # not sure if this is needed in every shell
 
 if [[ `/usr/libexec/java_home 2>/dev/null` ]]
