@@ -16,13 +16,13 @@
     - homebrew
 
 - name: check for homebrew
-  stat: path=/usr/local/bin/brew
+  stat: path=/opt/homebrew/bin/brew
   register: brew
   tags:
     - homebrew
 
 - name: install homebrew
-  shell: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
   when: not brew.stat.exists
   tags:
     - homebrew
