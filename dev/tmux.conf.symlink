@@ -1,6 +1,10 @@
 #unbind C-b
 #set -g prefix C-a
 
+# fixes a bug in homebrew built tmux 3.3 
+# https://github.com/Homebrew/homebrew-core/issues/102748
+set -g default-terminal screen-256color
+
 set -g set-titles on
 set -g set-titles-string "#T"
 
