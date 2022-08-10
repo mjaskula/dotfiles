@@ -2,3 +2,4 @@ provisioning/provision.retry
 config.symlink/rclone/rclone.conf
 config.symlink/gh/hosts.yml
 atom.symlink/recovery
+config.symlink/iterm2/AppSupport
