@@ -40,7 +40,7 @@ bind V \
 bind -r a select-pane -t .+1 \;  resize-pane -Z
 bind b last-window
 
-source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
+# source ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf
 
 set -g window-style 'bg=colour235'
 set -g window-active-style 'bg=colour0'
