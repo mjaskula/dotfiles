@@ -44,8 +44,8 @@
     - dropbox
     - google-chrome
     - iterm2
+    - rectangle
     # - slack
-    - spectacle
     # - supersync
   tags:
     - homebrew
