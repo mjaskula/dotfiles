@@ -39,18 +39,14 @@
     state: present
   with_items:
     - 1password
-    - amazon-music
-    - atom
     - disk-inventory-x
     - discord
     - dropbox
-    - font-hack
-    # - google-chrome
+    - google-chrome
     - iterm2
     # - slack
     - spectacle
-    - spotify
-    - supersync
+    # - supersync
   tags:
     - homebrew
 
