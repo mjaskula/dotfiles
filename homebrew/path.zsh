@@ -1,6 +1,6 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"  # intel
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"  # apple silicon
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
 export PATH=`echo $(brew --prefix coreutils)/libexec/gnubin`:$PATH
