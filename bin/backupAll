@@ -1,0 +1,14 @@
+#!/bin/sh
+# set -x
+set -e
+
+SCRIPT=$(basename "$0")
+
+{ [[ -z "$1" ]] ; } && { echo "Usage: $SCRIPT <destination_device>" ; exit 1; }
+
+DEST="${1}"
+
+backupUserDir Desktop ${DEST}
+backupUserDir Documents ${DEST}
+backupUserDir Downloads ${DEST}
+backupUserDir Pictures ${DEST}

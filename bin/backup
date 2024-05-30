@@ -1,7 +1,21 @@
 #!/bin/sh
-set -x
+# set -x
+set -e
 
-SRC=${1}
-DEST="${2}"
+if [[ -z "$1" ]] || [[ -z "$2" ]] || [[ -z "$3" ]]
+then 
+  echo "Usage: $SCRIPT <source directory> <orginization path> <destination device>"
+  echo "example 1: $SCRIPT ~/Docuements matthew/Documents coldstorage"
+  echo "example 2: $SCRIPT /Volumes/T9/storage T9 coldstorage"
+  exit 1
+fi
 
-rsync -rlptDivxzP ~/${SRC} rsync://matthew@192.168.42.2:/${DEST}/
+SRC_DIR=${1}
+SRC_HOST=${2}
+DEST_DEVICE="/Volumes/${3}/backup/${SRC_HOST}"
+
+
+echo "${SRC_DIR} -> ${DEST_DEVICE}"
+mkdir -p ${DEST_DEVICE}
+# rsync -rlptDivhxzPn ${SRC_DIR} ${DEST_DEVICE}
+rsync -rlptDivhxzP --exclude=".DS_Store" ${SRC_DIR} ${DEST_DEVICE}
