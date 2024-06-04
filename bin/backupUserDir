@@ -6,9 +6,9 @@ SCRIPT=$(basename "$0")
 
 { [[ -z "$1" ]] || [[ -z "$2" ]]; } && { echo "Usage: $SCRIPT <dirname> <destination_device>" ; exit 1; }
 
-DIR=${1}
+DIR="${1}"
 DEST="${2}"
 HOST=`hostname -s`
 USER=`whoami`
 
-backup ~/${DIR} ${HOST}/${USER} ${DEST}
+backup "/Users/${USER}/${DIR}" "${HOST}/${USER}" "${DEST}"

@@ -10,12 +10,12 @@ then
   exit 1
 fi
 
-SRC_DIR=${1}
-SRC_HOST=${2}
+SRC_DIR="${1}"
+SRC_HOST="${2}"
 DEST_DEVICE="/Volumes/${3}/backup/${SRC_HOST}"
 
 
 echo "${SRC_DIR} -> ${DEST_DEVICE}"
-mkdir -p ${DEST_DEVICE}
+mkdir -p "${DEST_DEVICE}"
 # rsync -rlptDivhxzPn ${SRC_DIR} ${DEST_DEVICE}
-rsync -rlptDivhxzP --exclude=".DS_Store" ${SRC_DIR} ${DEST_DEVICE}
+rsync -rlptDivhxzP --exclude=".DS_Store" "${SRC_DIR}" "${DEST_DEVICE}"
