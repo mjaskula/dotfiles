@@ -9,7 +9,8 @@ if test ! $(which brew); then
 fi
 
 # add homebrew to $PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"  # on M1 macs
+#eval "$(/usr/local/bin/brew shellenv)"  # on intel macs
 
 if test ! $(which pipx); then
   echo "  Installing pipx"

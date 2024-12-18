@@ -15,15 +15,23 @@
   tags:
     - homebrew
 
-- name: check for homebrew
-  stat: path=/opt/homebrew/bin/brew
-  register: brew
+- name: Check for Homebrew in /opt/homebrew/bin/brew
+  stat:
+    path: /opt/homebrew/bin/brew
+  register: brew_opt
   tags:
     - homebrew
 
-- name: install homebrew
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" 
-  when: not brew.stat.exists
+- name: Check for Homebrew in /usr/local/bin/brew
+  stat:
+    path: /usr/local/bin/brew
+  register: brew_usr_local
+  tags:
+    - homebrew
+
+- name: Install Homebrew if not found
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  when: not brew_opt.stat.exists and not brew_usr_local.stat.exists
   tags:
     - homebrew
 
